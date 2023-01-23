@@ -22,4 +22,4 @@ class ProductAdmin(admin.ModelAdmin):
 @admin.register(WorkSchedule)
 class WorkScheduleAdmin(admin.ModelAdmin):
     list_display = ('week_day', 'opening_time', 'closing_time')
-    search_fields = ('week_day', )
+    search_fields = ('week_day',)
