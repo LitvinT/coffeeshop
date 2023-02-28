@@ -88,3 +88,39 @@ class WorkSchedule(models.Model):
         db_table = 'main_work_schedule'
         verbose_name = 'график работы'
         verbose_name_plural = 'график работы'
+
+
+from django.db import models
+
+
+class User(models.Model):
+    id = models.BigIntegerField(
+        primary_key=True,
+        verbose_name='айди'
+    )
+    first_name = models.CharField(
+        max_length=64,
+        verbose_name='имя'
+    )
+    last_name = models.CharField(
+        max_length=64,
+        verbose_name='фамилия'
+    )
+    email = models.CharField(
+        max_length=5024,
+        unique=True,
+        null=False
+    )
+    hashed_password = models.CharField(
+        max_length=128
+    )
+    role_id = models.SmallIntegerField(
+        verbose_name='роль'
+    )
+
+
+class Proba(models.Model):
+    name = models.CharField(
+        max_length=128,
+        verbose_name='название'
+    )
